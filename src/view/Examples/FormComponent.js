@@ -16,9 +16,17 @@ class FormComponent extends React.Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
+    if (this.state.name === "" || this.state.age === "") {
+      alert("please enter the value of feild");
+      return;
+    }
     let random = Math.floor(Math.random() * 1001);
     let job = { id: random, ...this.state };
     this.props.addJob(job);
+    this.setState({
+      name: "",
+      age: "",
+    });
   };
   render() {
     return (

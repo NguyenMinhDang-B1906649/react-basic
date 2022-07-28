@@ -27,7 +27,11 @@ class ChildComponent extends React.Component {
               {jobs.map((item, index) => {
                 return (
                   <div className="div" key={item.id}>
-                    {item.name}-{item.age}
+                    {item.name}-{item.age}{" "}
+                    <span onClick={() => this.props.handleDeleteJob(item)}>
+                      {" "}
+                      x
+                    </span>
                   </div>
                 );
               })}

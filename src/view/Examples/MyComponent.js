@@ -14,12 +14,23 @@ class MyComponent extends React.Component {
       jobs: [...this.state.jobs, job],
     });
   };
+  handleDeleteJob = (job) => {
+    let newJobs = [...this.state.jobs];
+    let index = newJobs.indexOf(job);
+    newJobs.splice(index, 1);
+    this.setState({
+      jobs: newJobs,
+    });
+  };
   render() {
     return (
       <>
         <FormComponent addJob={this.handleAddJob} />
 
-        <ChildComponent jobs={this.state.jobs} />
+        <ChildComponent
+          jobs={this.state.jobs}
+          handleDeleteJob={this.handleDeleteJob}
+        />
       </>
     );
   }
