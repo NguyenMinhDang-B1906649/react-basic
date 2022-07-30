@@ -3,6 +3,7 @@ export class TodoInput extends Component {
   state = {
     title: "",
   };
+  todoInputRef = React.createRef();
   handleChange = (e) => {
     this.setState({
       title: e.target.value,
@@ -17,11 +18,13 @@ export class TodoInput extends Component {
     this.setState({
       title: "",
     });
+    this.todoInputRef.current.focus();
   };
   render() {
     return (
       <div className="todo-input-group">
         <input
+          ref={this.todoInputRef}
           className="todo-input"
           type="text"
           value={this.state.title}
