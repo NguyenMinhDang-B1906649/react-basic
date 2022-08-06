@@ -1,0 +1,42 @@
+.detail-user{
+    margin: 10px auto;
+    border-collapse: collapse;
+    width: 800px;
+    background-color: #ccc;
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        text-align: center;
+        vertical-align: middle;
+        padding: 8px;
+      }
+    tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+    thead{
+        tr{
+            th{
+                color: rgb(76, 7, 58);
+                font-size: 18px;
+                font-weight: 700;
+            }
+        }
+    }
+    tfoot{
+        tr{
+            text-align: center;
+            td{
+                button{
+                    padding: 8px 24px;
+                    border-radius: 5px;
+                    transition: 0.3s;
+                    &:hover{
+                        background-color: rgb(232, 215, 215);
+                        letter-spacing: 2px;
+                    }
+                }
+            }
+        }
+    }
+}

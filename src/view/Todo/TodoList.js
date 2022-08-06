@@ -25,16 +25,16 @@ export class TodoList extends Component {
     return todosIsEmpty === true ? (
       jobs.map((item, index) => {
         return (
-          <div key={item.id} className="todo-row">
+          <div key={item.id} className="todo_row">
             {" "}
             <span>{item.title}</span>
             <div className="icons">
               <RiCloseCircleLine
                 onClick={() => handleDelete(item)}
-                className="delete-icon"
+                className="delete_icon"
               />
               <TiEdit
-                className="edit-icon"
+                className="edit_icon"
                 onClick={() => this.handleEditJob(item)}
               />
             </div>
@@ -42,9 +42,9 @@ export class TodoList extends Component {
         );
       })
     ) : (
-      <div key={editTodo.id} className="todo-input-group">
+      <div key={editTodo.id} className="todo_input_group">
         <input
-          className="todo-input edit"
+          className="todo_input edit"
           type="text"
           value={editTodo.title}
           onChange={(e) => {
@@ -52,7 +52,7 @@ export class TodoList extends Component {
           }}
         />
         <button
-          className="todo-button edit"
+          className="todo_button edit"
           onClick={() => {
             handleEdit(editTodo);
             this.setState({

@@ -22,10 +22,10 @@ export class TodoInput extends Component {
   };
   render() {
     return (
-      <div className="todo-input-group">
+      <div className="todo_input_group">
         <input
           ref={this.todoInputRef}
-          className="todo-input"
+          className="todo_input"
           type="text"
           value={this.state.title}
           onChange={(e) => {
@@ -33,7 +33,7 @@ export class TodoInput extends Component {
           }}
         />
         <button
-          className="todo-button"
+          className="todo_button"
           onClick={() => {
             this.handleSubmit();
           }}

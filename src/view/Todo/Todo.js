@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import TodoInput from "./TodoInput";
+import "./todo.scss";
 import TodoList from "./TodoList";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 export class Todo extends Component {
   state = {
@@ -43,15 +46,29 @@ export class Todo extends Component {
   };
   render() {
     return (
-      <>
-        <TodoInput handleAdd={this.handleAdd} />
-        <TodoList
-          editTodo={this.state.editTodo}
-          jobs={this.state.jobs}
-          handleDelete={this.handleDelete}
-          handleEdit={this.handleUpdate}
-        />
-      </>
+      <div className="todo_wrapper">
+        <div className="todo_container">
+          <h1>Todo App with class component react</h1>
+          <TodoInput handleAdd={this.handleAdd} />
+          <TodoList
+            editTodo={this.state.editTodo}
+            jobs={this.state.jobs}
+            handleDelete={this.handleDelete}
+            handleEdit={this.handleUpdate}
+          />
+          <ToastContainer
+            position="top-right"
+            autoClose={2000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
+        </div>
+      </div>
     );
   }
 }
